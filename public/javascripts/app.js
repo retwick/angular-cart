@@ -50,5 +50,6 @@ var app = angular.module("myModule", [])
 				$scope.checkout  = function(total){
 					$http.get('/getData', {params:{total: total}});
 					console.log("total= " + total) ;
+					
 				}
 			}]);
