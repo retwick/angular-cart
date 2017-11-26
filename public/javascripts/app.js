@@ -48,17 +48,7 @@ var app = angular.module("myModule", [])
 				}
 
 				$scope.checkout  = function(total){
-					$http.get("/getData", {params:{"total": total} });
-    
-
-
-/*
-					$http({
-        				url:'/getData', 
-				        method: "GET",
-				        params: total
-     				});
-     				*/
-    				//console.log(total);
+					$http.get('/getData', {params:{total: total}});
+					console.log("total= " + total) ;
 				}
 			}]);
