@@ -6,10 +6,12 @@
         <title>Integrating AngularJS with NodeJS</title>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
         <script src="javascripts/app.js" type="text/javascript"></script>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         <link rel = "stylesheet" type = "text/css" href = "stylesheets/style.css"/>
   	</head>
 
-<body ng-app = "myModule" ng-controller = "myController">				
+<body ng-app = "myModule" ng-controller = "myController">
+	
 		<div>				
 			<div id = "product">
 				<div id = "p_list" ng-repeat = "product in products ">
@@ -49,90 +51,13 @@
 						</tbody>
 					</table>
 
-
-<!--
-	***********************************************************************
-	NEED HELP HERE
-	***********************************************************************
-
-	AUTOMATIC CHECKOUT
-<form action="/purchase" method="POST">
-
-<script
-    src="https://checkout.razorpay.com/v1/checkout.js"
-    data-key="rzp_test_2LJTA0baC5T5ER"
-
-
-   	***********************************************************************
-	NEED HELP HERE
-	***********************************************************************
-    data-amount= *************       //EQUATE TO total 
-    
-
-    data-buttontext="Pay with Razorpay"
-    data-name="Saarang"
-    data-description="Tickets via RZP"
-    data-image="http://freevector.co/wp-content/uploads/2012/07/78946-big-bug.png"
-    data-prefill.name="Retwick"
-    data-prefill.email="retwickrajeevan1@gmail.com"
-    data-prefill.contact="9500197488"
-    data-theme.color="#F37254" 
-></script>
-<input type="hidden" value="Hidden Element" name="hidden">
-</form>	
-
-
-
-	MANUAL CHECKOUT
-
-<button id="rzp-button1">Pay</button>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script>
-var options = {
-    "key": "rzp_test_2LJTA0baC5T5ER",
-
-
-	***********************************************************************
-	NEED HELP HERE
-	***********************************************************************
-    "amount": *****************, //insert total here
-    
-
-    "name": "Merchant Name",
-    "description": "Purchase Description",
-    "image": "/your_logo.png",
-    "handler": function (response){
-        alert(response.razorpay_payment_id);
-    },
-    "prefill": {
-        "name": "Harshil Mathur",
-        "email": "harshil@razorpay.com"
-    },
-    "notes": {
-        "address": "Hello World"
-    },
-    "theme": {
-        "color": "#F37254"
-    }
-};
-var rzp1 = new Razorpay(options);
-
-document.getElementById('rzp-button1').onclick = function(e){
-    rzp1.open();
-    e.preventDefault();
-}
-</script>
-
-*****************************************************
-!-->
-
-
-
-
-
-
 				</div>
 			</div>
-		</div>	
+		</div>
+	
+	
+	<button ng-click="btnClick(total)">Clicask to Pay</button>
+
+
 </body>	
 </html>

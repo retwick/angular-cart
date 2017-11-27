@@ -21,5 +21,13 @@ router.get('/getData', function (req, res) {
    //console.log(total);
 });
 
+
+
+
+
+
+
+
+
  
 module.exports = router;
