@@ -8,6 +8,7 @@
         <script src="javascripts/app.js" type="text/javascript"></script>
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         <link rel = "stylesheet" type = "text/css" href = "stylesheets/style.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "stylesheets/bootstrap.css"/>        
   	</head>
 
 <body ng-app = "myModule" ng-controller = "myController">	
@@ -40,7 +41,7 @@
 								<td>{{cartProduct.p_name}}</td>
 								<td>{{cartProduct.p_price}}</td>
 								<td>{{cartProduct.p_qty}}</td>
-								<td><button type = "button" ng-click = "remove_cart(cartProduct)" class = "btn btn-danger"></button></td>
+								<td><button type = "button" ng-click = "remove_cart(cartProduct)" class = "btn btn-danger"><span class="glyphicon glyphicon-minus"></span></button></td>
 							</tr>
 							<tr>
 								<td align = "right">Total </td>

@@ -52,14 +52,14 @@ var app = angular.module("myModule", [])
 		  	        'amount': '100',
 	    	    	'name': '',
 		      		'description': 'Pay for tickets',
-	    		    'image': '/images/logo.png',
+	    		    'image': '/images/logo.jpg',
 	    	    	'handler': function (transaction) {
 		       			$scope.transactionHandler(transaction);
       				},
 		    		'prefill': {
-	        		'name': 'retwick',
-	        		'email': 'rr@gmail.com',
-	        		'contact': '9500197488'
+	        		'name': 'Name',
+	        		'email': 'email@xyz.com',
+	        		'contact': '9999999999'
 	      			}
     			};
 
@@ -68,14 +68,13 @@ var app = angular.module("myModule", [])
     			}
 
     			$scope.btnClick = function (total) {
-    				console.log('hello');
-    				console.log($scope.options);
+    				//console.log('hello');
+    				//console.log($scope.options);
     				$scope.options.amount = total;
     				console.log($scope.options);
       				var rzp1 = new Razorpay($scope.options);
 				    rzp1.open();
-    			};
-				
+    			};				
 			}//match at line 2			
 		]) //end of controller
 ;
