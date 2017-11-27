@@ -46,23 +46,26 @@ var app = angular.module("myModule", [])
 						$scope.total -= product.p_price;						
 					}
 				}											
-    	$scope.options = {
-	        'key': 'rzp_test_2LJTA0baC5T5ER',
-	      // Initialize amount with Re.1
-	        'amount': '100',
-    	    'name': 'retwick',
-      		'description': 'Pay for tickets',
-    	    'image': '/images/logo.png',
-    	    'handler': function (transaction) {
-       			$scope.transactionHandler(transaction);
-      		},
-	    	'prefill': {
-        	'name': 'retw',
-        	'email': 'rr@gmail.com',
-        	'contact': '9500197487'
-      		}
-    	};
-    			
+    			$scope.options = {
+		     	   'key': 'rzp_test_2LJTA0baC5T5ER',
+		  		    // Initialize amount with Re.1
+		  	        'amount': '100',
+	    	    	'name': '',
+		      		'description': 'Pay for tickets',
+	    		    'image': '/images/logo.png',
+	    	    	'handler': function (transaction) {
+		       			$scope.transactionHandler(transaction);
+      				},
+		    		'prefill': {
+	        		'name': 'retwick',
+	        		'email': 'rr@gmail.com',
+	        		'contact': '9500197488'
+	      			}
+    			};
+
+    			$scope.transactionHandler= function(transaction){
+    				$http.post('/purchase',transaction);
+    			}
 
     			$scope.btnClick = function (total) {
     				console.log('hello');
@@ -73,7 +76,6 @@ var app = angular.module("myModule", [])
 				    rzp1.open();
     			};
 				
-
 			}//match at line 2			
 		]) //end of controller
 ;
